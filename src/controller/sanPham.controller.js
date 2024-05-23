@@ -209,7 +209,7 @@ const deleteSanPham = async (req, res) => {
     return res.status(400).json({ error: { message: "Sản phẩm không tồn tại" } });
   }
 
-  res.status(200).json({ data: sach, message: "Xoá thành công" });
+  res.status(200).json({ data: sanPham, message: "Xoá thành công" });
 };
 
 module.exports = {
