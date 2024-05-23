@@ -7,28 +7,16 @@ const GioHangschema = mongoose.Schema({
     danhSach: [{
         sach: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'sach'
+            ref: 'sanPham'
         },
         soLuong: {
             type: Number,
             default: 1
         },
-        soNgayThue: {
-            type: Number,
-            default: 7
-        },
-        giaThue: {
-            type: Number,
-            default: 0,
-        },
         thanhTien: {
             type: Number,
             default: 0,
         },
-        tienCoc: {
-            type: Number,
-            default: 0,
-        }
     }],
     tongGia: {
         type: Number,

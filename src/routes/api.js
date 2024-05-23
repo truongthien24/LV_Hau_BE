@@ -36,6 +36,14 @@ const {
   getDonHangByID,
 } = require("../controller/donHang.controller");
 const router = express.Router();
+const {
+  getAllSanPham,
+  getSanPhamByID,
+  findSanPham,
+  createSanPham,
+  updateSanPham,
+  deleteSanPham
+} = require("../controller/sanPham.controller");
 
 // Tài khoản
 router.post("/create-taiKhoan", postCreateTaiKhoan);
@@ -78,7 +86,13 @@ router.post("/uploads", async (req, res) => {
 
 module.exports = router;
 
-
+// Sản phẩm
+router.get("/getAllSanPham", getAllSanPham);
+router.post("/findSanPham", findSanPham);
+router.get("/getSanPhamByID/:id", getSanPhamByID);
+router.post("/createSanPham", createSanPham);
+router.delete("/deleteSanPham/:id", deleteSanPham);
+router.patch("/updateSanPham/:id", updateSanPham);
 // Thanh toán
 router.post("/thanhToan", paymentOnline);
 

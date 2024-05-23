@@ -19,9 +19,16 @@ const getAllTaiKhoan = async (req, res) => {
 
 const getTaiKhoanByField = async (req, res) => {
   try {
-    console.log('req', req)
-    const {tenDangNhap, loaiTaiKhoan, email = ""} = req.Data;
-    const users = await TaiKhoan.find({tenDangNhap: tenDangNhap, loaiTaiKhoan: loaiTaiKhoan, email: email});
+    const {tenDangNhap, loaiTaiKhoan, email = ""} = req.body.Data;
+    console.log(req.body.Data)
+    const users = await TaiKhoan.find(
+      
+      {
+        ...tenDangNhap && ({tenDangNhap: { $regex: ".*" + tenDangNhap + ".*", $options: "i" }}),
+        ...loaiTaiKhoan && ({loaiTaiKhoan: loaiTaiKhoan}),
+        ...email && ({email: { $regex: ".*" + email + ".*", $options: "i" }})
+      },
+    );
     res.status(200).json({data: users, message: 'Lấy thành công'});
   } catch (error) {
     res.status(500).json({ error: "Lỗi hệ thống" });

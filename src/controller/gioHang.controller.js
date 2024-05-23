@@ -1,5 +1,5 @@
 const GioHang = require("../models/GioHang");
-const Sach = require("../models/Sach");
+const Sach = require("../models/SanPham");
 const { json } = require("body-parser");
 const sendEmailPaymentSuccess = require("../utils/sendEmailPaymentSuccess");
 

@@ -1,7 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const DonHang = require("../models/DonHang");
 const GioHang = require("../models/GioHang");
-const Sach = require("../models/Sach");
+const Sach = require("../models/SanPham");
 const sendEmailPaymentSuccess = require("../utils/sendEmailPaymentSuccess");
 
 const getAllDonHang = async (req, res) => {

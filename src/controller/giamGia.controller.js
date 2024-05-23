@@ -1,5 +1,5 @@
 const GiamGia = require("../models/GiamGia");
-const Sach = require("../models/Sach");
+const Sach = require("../models/SanPham");
 
 const getAllGiamGia = async (req, res) => {
   try {
